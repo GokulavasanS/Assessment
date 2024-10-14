@@ -1,0 +1,101 @@
+.service {
+    height: auto; /* Adjust to allow content to define height */
+    padding: 4.5rem;
+    text-align: center;
+  }
+  
+  .service h2 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #ff6347;
+  }
+  
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .service-card {
+    position: relative;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.6s forwards;
+    animation-delay: calc(var(--animation-order) * 0.2s);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .service-card:nth-child(1) { --animation-order: 1; }
+  .service-card:nth-child(2) { --animation-order: 2; }
+  .service-card:nth-child(3) { --animation-order: 3; }
+  .service-card:nth-child(4) { --animation-order: 4; }
+  .service-card:nth-child(5) { --animation-order: 5; }
+  .service-card:nth-child(6) { --animation-order: 6; }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #ff6347;
+    color: white; /* Change text color on hover */
+  }
+  
+  .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .service-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .service-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .service h2 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .service-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .service h2 {
+      font-size: 1.8rem;
+    }
+  
+    .service-card h3 {
+      font-size: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .service h2 {
+      font-size: 1.5rem;
+    }
+  
+    .service-card h3 {
+      font-size: 1.2rem;
+    }
+  
+    .icon {
+      font-size: 2.5rem;
+    }
+  }
+  
